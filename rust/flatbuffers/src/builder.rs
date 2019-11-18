@@ -42,8 +42,8 @@ struct FieldLoc {
 /// limit of 2GiB, which is set by the FlatBuffers format).
 #[derive(Clone, Debug, Eq, PartialEq)]
 pub struct FlatBufferBuilder<'fbb> {
-    owned_buf: Vec<u8>,
-    head: usize,
+    pub(crate) owned_buf: Vec<u8>,
+    pub(crate) head: usize,
 
     field_locs: Vec<FieldLoc>,
     written_vtable_revpos: Vec<UOffsetT>,

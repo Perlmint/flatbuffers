@@ -31,6 +31,8 @@
 mod builder;
 mod endian_scalar;
 mod follow;
+#[cfg(feature = "grpc")]
+pub mod grpc;
 mod primitives;
 mod push;
 mod table;

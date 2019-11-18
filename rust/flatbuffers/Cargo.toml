@@ -11,3 +11,7 @@ categories = ["encoding", "data-structures", "memory-management"]
 
 [dependencies]
 smallvec = "1.0"
+bytes = { version = "0.4", optional = true}
+
+[features]
+grpc = ["bytes"]
