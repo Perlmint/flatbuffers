@@ -26,6 +26,7 @@ if "%1"=="-b" set buildtype=%2
 ..\%buildtype%\flatc.exe --cpp --java --csharp --gen-mutable --reflect-names --gen-object-api --gen-compare --no-includes --scoped-enums --jsonschema --cpp-ptr-type flatbuffers::unique_ptr arrays_test.fbs || goto FAIL
 ..\%buildtype%\flatc.exe --python --gen-mutable --reflect-names --gen-object-api --gen-compare --scoped-enums --jsonschema --cpp-ptr-type flatbuffers::unique_ptr arrays_test.fbs || goto FAIL
 ..\%buildtype%\flatc.exe --cpp --gen-mutable --gen-object-api --reflect-names --cpp-ptr-type flatbuffers::unique_ptr native_type_test.fbs || goto FAIL
+..\%buildtype%\flatc.exe --rust required_fields.fbs || goto FAIL
 
 IF NOT "%MONSTER_EXTRA%"=="skip" (
   @echo Generate MosterExtra
